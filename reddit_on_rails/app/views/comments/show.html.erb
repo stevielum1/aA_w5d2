@@ -1,0 +1,8 @@
+<h1>Reply to comment</h1>
+
+<form action="<%= comments_url %>" method="post">
+  <%= auth_token %>
+  <textarea placeholder="Body" name="comment[content]"></textarea>
+  <br>
+  <input type="submit" value="Submit">
+</form>
