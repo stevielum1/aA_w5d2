@@ -2,7 +2,7 @@
 
 <form action="<%= comments_url %>" method="post">
   <%= auth_token %>
-  <input type="hidden" name="comment[post_id]" value="<%= @post_id %>">
+  <input type="hidden" name="comment[post_id]" value="<%= @comment.post_id %>">
 
   <label for="comment_content"></label>
   <textarea id="comment_content" placeholder="Content..." name="comment[content]" rows="8" cols="80"></textarea>

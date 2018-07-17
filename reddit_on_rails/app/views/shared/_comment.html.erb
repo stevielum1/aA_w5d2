@@ -1,0 +1,7 @@
+<% return if comment.child_comments.empty? %>
+<ul>
+  <% comment.child_comments.each do |child| %>
+  <li><a href="<%= comment_url(child) %>"><%= child.content %></a></li>
+  <%=render "shared/comment", comment: child%>
+  <% end %>
+</ul>
