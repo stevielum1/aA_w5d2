@@ -10,10 +10,10 @@
 <a href="<%= edit_post_url %>">Edit Post</a>
 
 <h3>Comments</h3>
-<ul>
-  <% @post.top_level_comments.includes(:child_comments).each do |comment| %>
-    <li><a href="<%= comment_url(comment) %>"><%= comment.content %></a></li>
-    <%=render "shared/comment", comment: comment%>
-  <% end %>
-</ul>
+
 <a href="<%= new_post_comment_url(@post) %>">Add Comment</a>
+
+<% @post.top_level_comments.includes(:child_comments).each do |comment| %>
+  <% next unless comment.parent_comment_id.nil? %>
+  <%=render "shared/comment", comment: comment%>
+<% end %>

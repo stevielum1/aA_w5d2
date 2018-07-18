@@ -13,3 +13,12 @@
  *= require_tree .
  *= require_self
  */
+
+body {
+  margin: 10;
+  padding: 0;
+}
+
+ul {
+  margin: inherit;
+}
